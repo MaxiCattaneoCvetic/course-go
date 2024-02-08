@@ -50,4 +50,11 @@ func main() {
 		fmt.Println(MoVal, err)
 	}
 
+	function.MOperationsPRO(function.SUM, 10, 10)
+
+	function.MOperationsPRO(function.TEST, 10, 10)
+
+	factOpFun := function.FactoryOperation(function.SUM)
+	fmt.Println(factOpFun(10, 10))
+
 }

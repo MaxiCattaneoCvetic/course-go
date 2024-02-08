@@ -102,3 +102,9 @@ func MOperations(op Operation, values ...float64) (float64, error) {
 	}
 	return sum, nil
 }
+
+func MOperationsPRO(op Operation, x, y float64) (float64, error) {
+	value, err := Calc(op, x, y)
+	fmt.Println("Value: ", value, " Error: ", err)
+	return value, err
+}
