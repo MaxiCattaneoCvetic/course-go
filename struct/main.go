@@ -8,6 +8,7 @@ package main
 */
 
 import (
+	"GoCourse/struct/commerce"
 	"encoding/json" // Esto nos permite transformar una estructura a json<
 	"fmt"
 )
@@ -36,4 +37,40 @@ func main() {
 	fmt.Println(v)
 	// para hacer la conversion de bites a string  vamos a "castear"
 	fmt.Println(string(v))
+
+	/// COMMERCE
+	fmt.Println("------------------------------COMMERCE---------------------")
+	p1 := commerce.Product{
+		Name:  "Heladera marca samsung",
+		Price: 2000,
+		Type:  commerce.Type{ID: 1, Code: "A", Description: "Electronica"},
+		Tags:  []string{"electronic", "freezer", "samsung", "refrigerador"},
+		Count: 5,
+	}
+
+	p2 := commerce.Product{
+		Name:  "Naranja",
+		Price: 50,
+		Type:  commerce.Type{ID: 1, Code: "A", Description: "Frutas"},
+		Tags:  []string{"alimento", "verdura"},
+		Count: 20,
+	}
+
+	p3 := commerce.Product{
+		Name:  "Cortina",
+		Price: 6000,
+		Type:  commerce.Type{ID: 1, Code: "C", Description: "Hogar"},
+		Tags:  []string{"hogar,cortinas"},
+		Count: 3,
+	}
+
+	// creamos un carrito
+	car := commerce.NewCar(11312)
+	car.AddProduct(p1, p2, p3)
+
+	fmt.Println("PRODUCTS CAR")
+	fmt.Println("Total productos: ", len(car.Products))
+	fmt.Printf("Total Car %.2f\n", car.Total())
+	fmt.Println()
+
 }
