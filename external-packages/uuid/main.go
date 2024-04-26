@@ -20,6 +20,6 @@ func main() {
 	p(id1)
 
 	uid := uuid.New()
-	p(uid.Version())
+	p(uid.Version()) // la version del ID
 
 }
